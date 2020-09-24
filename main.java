@@ -16,7 +16,7 @@ public class main {
 		
 		System.out.println("");
 		
-		createGarage.addVehicle("zz33 zzz", "Burt", "Fiat", "Truckla", 5, 16, false);
+		createGarage.addVehicle("zz33 zzz", "Bob", "Fiat", "Truckla", 5, 16, false);
 		createGarage.addVehicle("aaa77 aaa", "Dave", "Ford", "Focus", 10, 4, 7);
 		createGarage.addVehicle("bb33 bbb", "Anne", "Yamaha", "Bikey", 3, true, true);
 		

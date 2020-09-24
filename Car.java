@@ -50,4 +50,12 @@ public class Car extends Vehicle{
 	{
 		return this.seats;
 	}
+	@Override
+	public double calculateCost()
+	{
+		double cost = 0;
+		cost = 40 + 5 * this.doors + 5 * this.seats;
+		System.out.println("The cost of fixing "+ this.owner + "s car is £" + cost);
+		return cost;
+	}
 }

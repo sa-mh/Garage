@@ -51,5 +51,18 @@ public class Truck extends Vehicle{
 	{
 		return this.cabinBed;
 	}
+	@Override
+	public double calculateCost()
+	{
+		double cost = 0;
+		double charges = 0;
+		if(this.cabinBed)
+		{
+			charges = 30;
+		}
+		cost = 60 + charges + this.wheels * 7.5;
+		System.out.println("The cost of fixing "+ this.owner + "s truck is £" + cost);
+		return cost;
+	}
 	
 }
