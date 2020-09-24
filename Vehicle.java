@@ -1,6 +1,6 @@
 package garage;
 
-public class Vehicle {
+public abstract class Vehicle {
 	
 	protected String reg;
 	protected String owner;
@@ -46,7 +46,7 @@ public class Vehicle {
 	{
 		return false; //overridden
 	}
-	public boolean getSideCar()
+	public  boolean getSideCar()
 	{
 		return false; //overridden
 	}
@@ -59,6 +59,7 @@ public class Vehicle {
 		return false; //overridden;
 	}
 
-
+	
+	public abstract double calculateCost();
 
 }

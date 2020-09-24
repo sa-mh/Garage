@@ -36,53 +36,16 @@ public class Garage {
 		Garage1.add(car2);
 	}
 	
-	public void calculateCost(ArrayList<Vehicle> temp)
+	
+	public void calculateCost(ArrayList<Vehicle> garage)
 	{
-		double cost = 0;
-		double charges = 0;
-		for(Vehicle transport: temp)
+		
+		for(Vehicle vehicle: garage)
 		{
-			if(transport instanceof Car)
-			{
-				cost = 40 + 5 * transport.getDoors() + 5 * transport.getSeats();
-				System.out.println("The cost of fixing "+ transport.getOwner() + "s car is £" + cost);
-				cost = 0;
-				charges = 0;
-			}
-			else if(transport instanceof Bike)
-			{
-				if(transport.getSideCar())
-				{
-					charges += 40;
-				}
-				if(transport.getWindow())
-				{
-					charges += 10;
-				}
-				cost = 20 + charges;
-				System.out.println("The cost of fixing "+ transport.getOwner() + "s bike is £" + cost);
-				cost = 0;
-				charges = 0;
-			}
-			else if(transport instanceof Truck)
-			{
-				if(transport.getBed())
-				{
-					charges = 30;
-				}
-				cost = 60 + charges + transport.getWheels() * 7.5;
-				System.out.println("The cost of fixing "+ transport.getOwner() + "s truck is £" + cost);
-				cost = 0;
-				charges = 0;
-			}
-			else
-			{
-				System.out.println("Something has broken");
-				cost = 0;
-			}
+			vehicle.calculateCost();
 		}
-		//return cost;
 	}
+
 	
 	public void emptyGarage()
 	{
@@ -154,6 +117,6 @@ public class Garage {
 		Garage1.removeAll(leaving);
 	}
 	
-
+	
 	
 }

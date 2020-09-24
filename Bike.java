@@ -52,6 +52,23 @@ public class Bike extends Vehicle{
 	{
 		return this.sideCar;
 	}
+	@Override
+	public double calculateCost()
+	{
+		double charges = 0;
+		double cost = 0;
+		if(this.sideCar)
+		{
+			charges += 40;
+		}
+		if(this.window)
+		{
+			charges += 10;
+		}
+		cost = 20 + charges;
+		System.out.println("The cost of fixing "+ this.owner + "s bike is £" + cost);
+		return cost;
+	}
 	
 	
 	
