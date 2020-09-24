@@ -1,0 +1,1 @@
+ended up confusing myself removing all vehicles of a type so thats not working yet
