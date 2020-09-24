@@ -38,7 +38,6 @@ public class Garage {
 	
 	public void calculateCost(ArrayList<Vehicle> temp)
 	{
-		int i = 0;
 		double cost = 0;
 		double charges = 0;
 		for(Vehicle transport: temp)
@@ -100,7 +99,6 @@ public class Garage {
 			if(transport.getReg().equals(reg))
 			{
 				System.out.println(transport.getOwner() + "s vehicle has been removed from the garage");
-				//Garage1.remove(i);
 				removeVehicle = true;
 				break;
 			}
@@ -112,10 +110,10 @@ public class Garage {
 		}
 		
 	}
+	
 	public void removeVehicles(char type)
 	{
-		int i = 0;
-		boolean removeVehicle = false;
+		ArrayList<Vehicle> leaving = new ArrayList<>();
 		if(type == 't' || type == 'T')
 		{
 			for(Vehicle transport: Garage1)
@@ -123,17 +121,8 @@ public class Garage {
 				if(transport instanceof Truck)
 				{
 					System.out.println(transport.getOwner() + "s truck has been removed from the garage");
-					//Garage1.remove(i);
-					//removeVehicles('t');
-					break;
+					leaving.add(transport);
 				}
-				i++;
-			}
-			if(removeVehicle)
-			{
-				Garage1.remove(i);
-				removeVehicle = false;
-				removeVehicles('t');
 			}
 		}
 		else if(type == 'c' || type == 'C')
@@ -143,49 +132,28 @@ public class Garage {
 				if(transport instanceof Car)
 				{
 					System.out.println(transport.getOwner() + "s car has been removed from the garage");
-					//Garage1.remove(i);
-					//removeVehicles('c');
-					break;
+					leaving.add(transport);
 				}
-				i++;
-			}
-			if(removeVehicle)
-			{
-				Garage1.remove(i);
-				removeVehicle = false;
-				removeVehicles('c');
-			}
-			
+			}	
 		}
 		else if(type == 'b' || type == 'B')
 		{
-		/*	for(Vehicle transport: Garage1)
+			for(Vehicle transport: Garage1)
 			{
-				if(transport instanceof Car)
+				if(transport instanceof Bike)
 				{
 					System.out.println(transport.getOwner() + "s bike has been removed from the garage");
-					//Garage1.remove(i);
-					//removeVehicles('b');
-					break;
+					leaving.add(transport);
 				}
-				i++;
 			}
-			if(removeVehicle)
-			{
-				Garage1.remove(i);
-				removeVehicle = false;
-				removeVehicles('b');
-			} */
-			
-			
-			
-			
 		}
 		else
 		{
 			System.out.println("Vehicle type unknown.");
 		}
-		
+		Garage1.removeAll(leaving);
 	}
+	
+
 	
 }
